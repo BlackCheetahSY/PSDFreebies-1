@@ -1,0 +1,100 @@
+/* Overlay */
+.overlay {
+  --overlay-color: #333333;
+  position: relative;
+  z-index: 1;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  background-color: var(--overlay-color);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 75%;
+}
+
+/* Section Text */
+.section-text .description {
+  color: var(--black);
+  line-height: var(--comfy-text);
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+/* Light Description */
+.section-text.light .description b {
+  color: white;
+}
+
+.section-text.light .description {
+  color: #ccc;;
+}
+
+@media (max-width: 767px) {
+  .section-text {
+    text-align: center;
+  }
+  .section-text h2.section-title.team-line::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .section-text .description {
+    margin: 0 auto 30px;
+  }
+}
+
+/* Section Title */
+h2.section-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--black);
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Light Section Title */
+.light h2.section-title {
+  color: white;
+}
+
+h2.section-title.team-line {
+  margin-bottom: 60px;
+}
+
+h2.section-title.team-line:before {
+  content: "";
+  background-color: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 160px;
+  height: 5px;
+}
+
+h2.section-title .first {
+  color: var(--primary);
+}
+
+/* Read More Link */
+a.more {
+  display: inline-block;
+  color: white;
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition-property: color, border-color, background-color;
+  transition-duration: var(--motion-duration);
+}
+
+a.more:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background-color: white;
+}
